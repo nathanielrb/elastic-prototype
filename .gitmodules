@@ -7,3 +7,6 @@
 [submodule "mu-query-rewriter-sandbox"]
 	path = mu-query-rewriter-sandbox
 	url = https://github.com/nathanielrb/mu-query-rewriter-sandbox
+[submodule "mu-elastic-search"]
+	path = mu-elastic-search
+	url = git@github.com:nathanielrb/mu-elastic-search.git
