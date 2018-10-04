@@ -68,3 +68,9 @@ services:
       RACK_ENV: development
     volumes:
       - ./mu-elastic-search:/app
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.1
+    volumes:
+      - ./data/elasticsearch:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200    
