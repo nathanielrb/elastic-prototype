@@ -1,27 +1,30 @@
 @prefix muAuth: <http://mu.semte.ch/vocabularies/authorization/>
 @prefix mu: <http://mu.semte.ch/vocabularies/core/>
 
-<group1> mu:uuid "g01".
-<group2> mu:uuid "g02".
-<group3> mu:uuid "g03".
+<group1> a muAuth:Group; mu:uuid "g01".
+<group2> a muAuth:Group; mu:uuid "g02".
+<group3> a muAuth:Group; mu:uuid "g03".
 
-<document1> muAuth:inGroup <group1>, <group2>;
+<document1> a mu:Document;
+            muAuth:inGroup <group1>, <group2>;
             mu:title "A First Document";
             mu:description "A document about fish and cats.";
             mu:uuid "001".
 
 
-<document2> muAuth:inGroup <group1>, <group3>;
+<document2> a mu:Document;
+            muAuth:inGroup <group1>, <group3>;
             mu:title "A Second Document";
             mu:description "A document about shrimp and sheep.";
             mu:uuid "002".
 
-<document3> muAuth:inGroup <group2>;
+<document3> a mu:Document;
+            muAuth:inGroup <group2>;
             mu:title "A Third Document";
             mu:description "A document about dogs and birds.";
             mu:uuid "003".
 
 
-<user1> muAuth:memberGroup <group1>.
+<user1> a mu:Person; muAuth:memberGroup <group1>.
 
-<user2> muAuth:memberGroup <group2>.
+<user2> a mu:Person;  muAuth:memberGroup <group2>.
