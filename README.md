@@ -18,3 +18,9 @@ Boot your microservices-enabled system using docker-compose.
     docker-compose up
 
 You can shut down using `docker-compose stop` and remove everything using `docker-compose rm`.
+
+### Note
+
+For elasticsearch to run, you need to give it enough memory. Quick fix (temp):
+
+    sudo sysctl -w vm.max_map_count=262144
