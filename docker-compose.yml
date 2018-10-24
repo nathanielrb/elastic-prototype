@@ -68,6 +68,7 @@ services:
       RACK_ENV: development
     volumes:
       - ./mu-elastic-search:/app
+      - ./config/elastic:/config
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.1
     volumes:

@@ -1,0 +1,13 @@
+{ "offset": 100,
+  "types": 
+  [{
+      "type": "document",
+      "on_path": "documents",
+      "rdf_type": "<http://mu.semte.ch/vocabularies/core/Document>",
+      "properties": {
+          "title": "<http://mu.semte.ch/vocabularies/core/title>",
+          "description": "<http://mu.semte.ch/vocabularies/core/description>" 
+      },
+      "mappings": null
+  }]
+}
