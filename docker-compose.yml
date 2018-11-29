@@ -32,7 +32,7 @@ services:
       PRINT_SPARQL_QUERIES: "true"
       CALCULATE_ANNOTATIONS: "true"
       REWRITE_SELECT_QUERIES: "true"
-      PLUGIN: "school-values"
+      PLUGIN: "elastic-prototype"
       DEBUG: "true"
     volumes:
       - ./config/rewriter:/config
@@ -63,12 +63,13 @@ services:
     ports:
       - 8888:80
     links:
-      - db:database
+      - as:database
+      - db:db
     environment:
       RACK_ENV: development
     volumes:
       - ./mu-elastic-search:/app
-      - ./config/elastic:/config
+      - ./mu-elastic-search/config:/config
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.1
     volumes:
