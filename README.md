@@ -1,8 +1,10 @@
 # mu-elastic-search-prototype
 
-This is a first attempt at writing an Elasticsearch component for mu.semte.ch. 
+This is an environment for testing the first attempt at writing an Elasticsearch component for mu.semte.ch (https://github.com/nathanielrb/mu-elastic-search).
 
-Currently there is no configuration, and many things are hard-coded.
+It uses the mu-query-rewriter authorization component, with the plugin found in `./config/rewriter/elastic-prototype.scm`.
+
+Simple tests can be found and run in `./mu-elastic-search/testing/basic-tests.rb`.
 
 ## How to
 
@@ -19,7 +21,7 @@ Boot your microservices-enabled system using docker-compose.
 
 You can shut down using `docker-compose stop` and remove everything using `docker-compose rm`.
 
-### Note
+## Memory Usage
 
 For elasticsearch to run, you need to give it enough memory. Quick fix (temp):
 
