@@ -24,7 +24,7 @@ services:
     ports:
       - "4028:80"
   as:
-    image: bde2020/mu-query-rewriter
+    build: ./mu-query-rewriter
     links:
       - db:database
     environment:
@@ -34,6 +34,7 @@ services:
       REWRITE_SELECT_QUERIES: "true"
       PLUGIN: "elastic-prototype"
       DEBUG: "true"
+      SEND_DELTAS: "true"
     volumes:
       - ./config/rewriter:/config
     ports:

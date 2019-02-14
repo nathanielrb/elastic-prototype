@@ -36,7 +36,7 @@
                 (conc "; muAuth:inGroup ?group "
                       "FILTER (?group IN (" 
                       (string-join 
-                       (map (cut format "~A" <>) groups)
+                       (map (cut format "<~A>" <>) groups)
                        ",")
                       "))"))
             " @access group(?group) "

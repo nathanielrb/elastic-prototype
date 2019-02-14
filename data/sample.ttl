@@ -27,6 +27,24 @@
             dc:description "A document about dogs and birds.";
             mu:uuid "003".
 
+<document4> a ex:Document;
+            muAuth:inGroup <group1>;
+            dc:title "A Fourth Document";
+            dc:description "A document about dogs and birds.";
+            mu:uuid "004".
+
+<document5> a ex:Document;
+            muAuth:inGroup <group1>;
+            dc:title "A Fifth Document";
+            dc:description "A document about dogs and birds.";
+            mu:uuid "005".
+
+<document6> a ex:Document;
+            muAuth:inGroup <group1>;
+            dc:title "A Sixth Document";
+            dc:description "A document about dogs and birds.";
+            mu:uuid "006".
+
 
 <user1> a mu:Person; muAuth:memberGroup <group1>.
 

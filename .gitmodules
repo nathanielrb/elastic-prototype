@@ -10,3 +10,6 @@
 [submodule "mu-elastic-search"]
 	path = mu-elastic-search
 	url = git@github.com:nathanielrb/mu-elastic-search.git
+[submodule "mu-query-rewriter"]
+	path = mu-query-rewriter
+	url = git@github.com:nathanielrb/mu-query-rewriter.git
