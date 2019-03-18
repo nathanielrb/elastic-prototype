@@ -1,6 +1,9 @@
 # mu-elastic-search-prototype
 
+
 This is a sandbox for testing [https://github.com/nathanielrb/mu-elastic-search](mu-elastic-search), the Elasticsearch component for mu.semte.ch. 
+
+It is configured *without* deltas or authorization. (Testing for deltas and authorization have been done using the mu-query-rewriter authorization component, with the plugin found in `./config/rewriter/elastic-prototype.scm`. This is currently disconnected.)
 
 ## How to
 
@@ -44,6 +47,8 @@ Rebuild an index:
 ```
 curl -X POST -H "MU_AUTH_ALLOWED_GROUPS: [{\"value\" : \"group2\"}]" http://localhost:8888/documents/index
 ```
-
 **Note** that the `MU_AUTH_ALLOWED_GROUPS` header is required even though this is not taken into account when an authorization service is not in place. Queries sent without this header are currently considered 'admin' queries and result in different behavior. Moreover this behavior is currently buggy. See mu-elastic-search documentation for more.
+
+A simple testing environment is provided, and demonstrated in `./mu-elastic-search/testing/basic-tests.rb`. The provided tests DO NOT reflect the current model.
+
 
