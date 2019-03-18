@@ -1,4 +1,4 @@
-# mu-elastic-search-prototype
+# elastic-prototype
 
 
 This is a sandbox for testing [mu-elastic-search](https://github.com/nathanielrb/mu-elastic-search), the Elasticsearch component for mu.semte.ch. 
