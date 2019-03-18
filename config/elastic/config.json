@@ -1,13 +1,36 @@
-{ "offset": 100,
-  "types": 
-  [{
-      "type": "document",
-      "on_path": "documents",
-      "rdf_type": "<http://mu.semte.ch/vocabularies/core/Document>",
-      "properties": {
-          "title": "<http://mu.semte.ch/vocabularies/core/title>",
-          "description": "<http://mu.semte.ch/vocabularies/core/description>" 
-      },
-      "mappings": null
-  }]
+// IN DEVELOPMENT,
+// NOT TESTED YET!!
+{
+    "offset": 100,
+    "automatic_index_updates" : false ,
+     "eager_indexing_groups" : [["group1"]],
+
+
+    "eager_indexing_sparql_query" : false,
+    "persist_indexes" : false,
+    "types": 
+    [{
+        "type": "document",
+        "on_path": "documents",
+        "rdf_type": "http://xmlns.com/foaf/0.1/Document",
+        "properties": {
+            "archived" : "http://data.vlaanderen.be/ns/besluitvorming#gearchiveerd",
+            "title" : "http://purl.org/dc/terms/title",
+            "description" : "http://mu.semte.ch/vocabularies/ext/omschrijving",
+            "created" : "http://purl.org/dc/terms/created",
+            "number_vp" : "http://data.vlaanderen.be/ns/besluitvorming#stuknummerVP",
+            "number_vr" : "http://data.vlaanderen.be/ns/besluitvorming#stuknummerVR",
+            
+
+            // has-many
+            "remark" : "http://data.vlaanderen.be/ns/besluitvorming#opmerking",
+            "document_version" : "http://data.vlaanderen.be/ns/besluitvorming#heeftVersie",
+
+            // has-one
+            "decision" : "http://mu.semte.ch/vocabularies/ext/besluitHeeftDocument",
+            "document_type" : ["http://mu.semte.ch/vocabularies/ext/documentType", "http://www.w3.org/2004/02/skos/core#prefLabel"],
+            "confidentiality" : "http://data.vlaanderen.be/ns/besluitvorming#vertrouwelijkheid"
+        },
+        "mappings": null
+    }]
 }

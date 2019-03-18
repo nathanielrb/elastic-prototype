@@ -1,8 +1,6 @@
 # mu-elastic-search-prototype
 
-This is a first attempt at writing an Elasticsearch component for mu.semte.ch. 
-
-Currently there is no configuration, and many things are hard-coded.
+This is a sandbox for testing [https://github.com/nathanielrb/mu-elastic-search](mu-elastic-search), the Elasticsearch component for mu.semte.ch. 
 
 ## How to
 
@@ -10,17 +8,42 @@ Currently there is no configuration, and many things are hard-coded.
 
 Clone this project, initialize the submodules.
 
+### Memory usage
+
+For elasticsearch to run, you need to give it enough memory. Quick local fix:
+
+    sudo sysctl -w vm.max_map_count=262144
+
 ### Boot up the system
 
 Boot your microservices-enabled system using docker-compose.
 
-    cd /path/to/mu-elastic-search-prototype
+    cd /path/to/elastic-prototype
     docker-compose up
 
-You can shut down using `docker-compose stop` and remove everything using `docker-compose rm`.
+### Load Sample Data
 
-### Note
+Load the sample data in `/data/example.ttl` into the graph `<http://mu.semte.ch/flemishGovernment>`. (This data is taken from <https://github.com/kanselarij-vlaanderen/kaleidos-project/blob/master/data/example.ttl>, with minor additions in text fields.)
 
-For elasticsearch to run, you need to give it enough memory. Quick fix (temp):
+### Send Queries
 
-    sudo sysctl -w vm.max_map_count=262144
+Query the pre-built index:
+
+```
+curl -H "MU_AUTH_ALLOWED_GROUPS: [{\"value\" : \"group1\"}]" http://localhost:8888/documents/search?filter[title]=fish
+```
+
+Query a new index:
+
+```
+curl -H "MU_AUTH_ALLOWED_GROUPS: [{\"value\" : \"group2\"}]" http://localhost:8888/documents/search?filter[title]=fish
+```
+
+Rebuild an index:
+
+```
+curl -X POST -H "MU_AUTH_ALLOWED_GROUPS: [{\"value\" : \"group2\"}]" http://localhost:8888/documents/index
+```
+
+**Note** that the `MU_AUTH_ALLOWED_GROUPS` header is required even though this is not taken into account when an authorization service is not in place. Queries sent without this header are currently considered 'admin' queries and result in different behavior. Moreover this behavior is currently buggy. See mu-elastic-search documentation for more.
+

@@ -24,6 +24,7 @@ services:
     ports:
       - "4028:80"
   as:
+    # image: bde2020/mu-query-rewriter
     build: ./mu-query-rewriter
     links:
       - db:database
@@ -35,6 +36,7 @@ services:
       PLUGIN: "elastic-prototype"
       DEBUG: "true"
       SEND_DELTAS: "true"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/flemishGovernment"
     volumes:
       - ./config/rewriter:/config
     ports:
@@ -44,7 +46,7 @@ services:
     image: tenforce/virtuoso:1.0.0-virtuoso7.2.4
     environment:
       SPARQL_UPDATE: "true"
-      DEFAULT_GRAPH: "http://mu.semte.ch/application"
+      DEFAULT_GRAPH: "http://mu.semte.ch/flemishGovernment"
     ports:
       - "8890:8890"
     volumes:
@@ -53,6 +55,7 @@ services:
     image: semtech/mu-cl-resources
     environment:
       MU_DECLARE_RESOURCE_TYPES: "true"
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/flemishGovernment"
     links:
       - as:database
     volumes:
@@ -64,13 +67,14 @@ services:
     ports:
       - 8888:80
     links:
-      - as:database
+      - db:database
       - db:db
     environment:
       RACK_ENV: development
+      MU_APPLICATION_GRAPH: "http://mu.semte.ch/flemishGovernment"
     volumes:
       - ./mu-elastic-search:/app
-      - ./mu-elastic-search/config:/config
+      - ./config/elastic:/config
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.1
     volumes:
