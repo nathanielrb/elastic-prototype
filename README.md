@@ -1,9 +1,11 @@
 # mu-elastic-search-prototype
 
 
-This is a sandbox for testing [https://github.com/nathanielrb/mu-elastic-search](mu-elastic-search), the Elasticsearch component for mu.semte.ch. 
+This is a sandbox for testing [mu-elastic-search](https://github.com/nathanielrb/mu-elastic-search), the Elasticsearch component for mu.semte.ch. 
 
-It is configured *without* deltas or authorization. (Testing for deltas and authorization have been done using the mu-query-rewriter authorization component, with the plugin found in `./config/rewriter/elastic-prototype.scm`. This is currently disconnected.)
+It is configured *without* deltas or authorization. 
+
+(Testing for deltas and authorization have been done using the mu-query-rewriter authorization component, with the plugin found in `./config/rewriter/elastic-prototype.scm`. This is now disconnected, and does not reflect the current model.)
 
 ## How to
 
