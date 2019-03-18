@@ -35,21 +35,26 @@ Load the sample data in `/data/example.ttl` into the graph `<http://mu.semte.ch/
 Query the pre-built index:
 
 ```
-curl -H "MU_AUTH_ALLOWED_GROUPS: [{\"value\" : \"group1\"}]" http://localhost:8888/documents/search?filter[title]=fish
+curl -H "MU_AUTH_ALLOWED_GROUPS: [{\"value\" : \"group1\"}]" \
+     http://localhost:8888/documents/search?filter[title]=fish
 ```
 
 Query a new index:
 
 ```
-curl -H "MU_AUTH_ALLOWED_GROUPS: [{\"value\" : \"group2\"}]" http://localhost:8888/documents/search?filter[title]=fish
+curl -H "MU_AUTH_ALLOWED_GROUPS: [{\"value\" : \"group2\"}]" \
+      http://localhost:8888/documents/search?filter[title]=fish
 ```
 
 Rebuild an index:
 
 ```
-curl -X POST -H "MU_AUTH_ALLOWED_GROUPS: [{\"value\" : \"group2\"}]" http://localhost:8888/documents/index
+curl -X POST -H "MU_AUTH_ALLOWED_GROUPS: [{\"value\" : \"group2\"}]" \
+     http://localhost:8888/documents/index
 ```
 **Note** that the `MU_AUTH_ALLOWED_GROUPS` header is required even though this is not taken into account when an authorization service is not in place. Queries sent without this header are currently considered 'admin' queries and result in different behavior. Moreover this behavior is currently buggy. See mu-elastic-search documentation for more.
+
+### Testing Environment
 
 A simple testing environment is provided, and demonstrated in `./mu-elastic-search/testing/basic-tests.rb`. The provided tests DO NOT reflect the current model.
 
