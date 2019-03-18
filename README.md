@@ -54,6 +54,20 @@ curl -X POST -H "MU_AUTH_ALLOWED_GROUPS: [{\"value\" : \"group2\"}]" \
 ```
 **Note** that the `MU_AUTH_ALLOWED_GROUPS` header is required even though this is not taken into account when an authorization service is not in place. Queries sent without this header are currently considered 'admin' queries and result in different behavior. Moreover this behavior is currently buggy. See mu-elastic-search documentation for more.
 
+### Tweak the Configuration
+
+Changes to the config file in `./config/elastic/config.json` trigger a reload of all indexes.
+
+Easy changes are adding/removing `eager_indexing_groups`:
+
+     "eager_indexing_groups" : [["group1"]],
+
+to 
+
+     "eager_indexing_groups" : [],
+
+and turning on/off the `persist_indexes` option.
+
 ### Testing Environment
 
 A simple testing environment is provided, and demonstrated in `./mu-elastic-search/testing/basic-tests.rb`. The provided tests DO NOT reflect the current model.

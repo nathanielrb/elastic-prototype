@@ -5,7 +5,6 @@
     "automatic_index_updates" : false ,
      "eager_indexing_groups" : [["group1"]],
 
-
     "eager_indexing_sparql_query" : false,
     "persist_indexes" : false,
     "types": 
