@@ -37,10 +37,11 @@
 @prefix foaf:	<http://xmlns.com/foaf/0.1/> .
 <http://data.vlaanderen.be/id/concept/Document/5C6561ECD1F88B000B000010>	rdf:type	foaf:Document ;
 	ns7:documentVersie	<http://localhost/vo/document-versions/5C6561ECD1F88B000B000011> ;
-	ns5:uuid	"5C6561ECD1F88B000B000010" ;
+	ns5:uuid	"5C6561ECD1F88B000B000010" ; 
         ns3:title "Schappen";
         ext:omschrijving "A document about schappen.";
-        ext:documentType <documentType1>.
+        ext:documentType <documentType1>;
+        ns9:opmerking <http://data.vlaanderen.be/id/Opmerking/5C65814D2065C9000C000001>.
 <documentType1> a ext:DocumentTypeCode;
                 skos:prefLabel "Type1".
 <http://localhost/vo/document-versions/5C6561ECD1F88B000B000011>	rdf:type	ns7:DocumentVersie ;
@@ -86,7 +87,7 @@
 	ns7:file	<http://mu.semte.ch/services/file-service/files/5c6561e90129df000e000002> .
 @prefix ns11:	<http://schema.org/> .
 <http://data.vlaanderen.be/id/Opmerking/5C65814D2065C9000C000001>	rdf:type	ns11:Comment ;
-	ns9:aanmaakdatum	"2019-02-14T14:55:09.304Z"^^xsd:dateTime ;
+	ns9:aanmaakdatum	"2019-02-14T14:55:09.304Z"^^xsd:dateTime ; 
 	ns5:uuid	"5C65814D2065C9000C000001" .
 @prefix ns12:	<https://www.w3.org/2000/01/rdf-schema#> .
 <http://data.vlaanderen.be/id/Opmerking/5C65814D2065C9000C000001>	ns12:comment	"1234567" .
