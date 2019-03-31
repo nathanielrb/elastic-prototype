@@ -18,30 +18,29 @@ services:
     image: semtech/mu-dispatcher:1.1.0
     links:
       - resource:resource
-      - as:as
     volumes:
       - ./config/dispatcher:/config
     ports:
       - "4028:80"
-  as:
-    # image: bde2020/mu-query-rewriter
-    build: ./mu-query-rewriter
-    links:
-      - db:database
-    environment:
-      MESSAGE_LOGGING: "true"
-      PRINT_SPARQL_QUERIES: "true"
-      CALCULATE_ANNOTATIONS: "true"
-      REWRITE_SELECT_QUERIES: "true"
-      PLUGIN: "elastic-prototype"
-      DEBUG: "true"
-      SEND_DELTAS: "true"
-      MU_APPLICATION_GRAPH: "http://mu.semte.ch/flemishGovernment"
-    volumes:
-      - ./config/rewriter:/config
-    ports:
-      - "4005:4005"
-      - "4027:8890"
+  # as:
+  #   image: bde2020/mu-query-rewriter
+  #   # build: ./mu-query-rewriter
+  #   links:
+  #     - db:database
+  #   environment:
+  #     MESSAGE_LOGGING: "true"
+  #     PRINT_SPARQL_QUERIES: "true"
+  #     CALCULATE_ANNOTATIONS: "true"
+  #     REWRITE_SELECT_QUERIES: "true"
+  #     PLUGIN: "elastic-prototype"
+  #     DEBUG: "true"
+  #     SEND_DELTAS: "true"
+  #     MU_APPLICATION_GRAPH: "http://mu.semte.ch/flemishGovernment"
+  #   volumes:
+  #     - ./config/rewriter:/config
+  #   ports:
+  #     - "4005:4005"
+  #     - "4027:8890"
   db:
     image: tenforce/virtuoso:1.0.0-virtuoso7.2.4
     environment:
@@ -57,7 +56,7 @@ services:
       MU_DECLARE_RESOURCE_TYPES: "true"
       MU_APPLICATION_GRAPH: "http://mu.semte.ch/flemishGovernment"
     links:
-      - as:database
+      - db:database
     volumes:
       - ./config/resources:/config
     ports:
