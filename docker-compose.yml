@@ -81,7 +81,7 @@ services:
     ports:
       - 9200:9200    
     environment:
-      # TAKE_FILE_OWNERSHIP: ./data/elasticsearch
+      TAKE_FILE_OWNERSHIP: ./data/elasticsearch
   kibana:
     image: docker.elastic.co/kibana/kibana:6.4.2
     ports:
