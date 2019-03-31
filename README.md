@@ -28,7 +28,7 @@ Boot your microservices-enabled system using docker-compose.
 
 ### Load Sample Data
 
-Load the sample data in `/data/example.ttl` into the graph `<http://mu.semte.ch/flemishGovernment>`. (This data is taken from <https://github.com/kanselarij-vlaanderen/kaleidos-project/blob/master/data/example.ttl>, with minor additions in text fields.)
+Load the sample data in `./data/example.ttl` into the graph `<http://mu.semte.ch/flemishGovernment>`. (This data is taken from <https://github.com/kanselarij-vlaanderen/kaleidos-project/blob/master/data/example.ttl>, with minor additions in text fields.)
 
 ### Send Queries
 
