@@ -36,14 +36,14 @@ Query the pre-built index:
 
 ```
 curl -H "MU_AUTH_ALLOWED_GROUPS: [{\"value\" : \"group1\"}]" \
-     http://localhost:8888/documents/search?filter[title]=fish
+     http://localhost:8888/documents/search?filter\\[title\\]=fish
 ```
 
 Query a new index:
 
 ```
 curl -H "MU_AUTH_ALLOWED_GROUPS: [{\"value\" : \"group2\"}]" \
-      http://localhost:8888/documents/search?filter[title]=fish
+      http://localhost:8888/documents/search?filter\\[title\\]=fish
 ```
 
 Rebuild an index:
