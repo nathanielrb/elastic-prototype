@@ -4,7 +4,8 @@
 @prefix xsd:	<http://www.w3.org/2001/XMLSchema#> .
 @prefix ns3:	<http://purl.org/dc/terms/> .
 @prefix ext: <http://mu.semte.ch/vocabularies/ext/> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#>
+@prefix skos: <http://www.w3.org/2004/02/skos/core#>.
+@prefix mu: <http://mu.semte.ch/vocabularies/core/>.
 
 <http://mu.semte.ch/services/file-service/files/5c6561e90129df000e000002>	ns3:created	"2019-02-14T12:41:13Z"^^xsd:dateTime ;
 	ns3:modified	"2019-02-14T12:41:13Z"^^xsd:dateTime ;
@@ -232,7 +233,8 @@
 <http://data.vlaanderen.be/id/concept/Document/5C65341DD374EE000B000004>	rdf:type	foaf:Document ;
 	ns5:uuid	"5C65341DD374EE000B000004" ;
         ns3:title "Fish";
-        ext:omschrijving "A document about fish.".
+        ext:omschrijving "A document about fish.";
+        mu:filename "pdf-sample.pdf".
 <http://data.vlaanderen.be/id/Opmerking/5C657F803FC4FA000A000005>	rdf:type	ns11:Comment ;
 	ns9:aanmaakdatum	"2019-02-14T14:47:28.538Z"^^xsd:dateTime ;
 	ns5:uuid	"5C657F803FC4FA000A000005" ;
@@ -587,7 +589,7 @@
 <http://localhost/vo/document-versions/5C656213D1F88B000B000019>	rdf:type	ns7:DocumentVersie ;
 	ns7:gekozenDocumentNaam	"example.ttl" ;
 	ns5:uuid	"5C656213D1F88B000B000019" ;
-	ns7:versieNummer	1 ;
+	ns7:versieNummer	3 ;
 	ns7:versieAangemaakt	"2019-02-14T12:41:55.352Z"^^xsd:dateTime ;
 	ns7:file	<http://mu.semte.ch/services/file-service/files/5c6562110129df000e000006> .
 <http://data.vlaanderen.be/id/Publicatie/5C666CECB33082000B000001>	rdf:type	ns9:NieuwsbriefInfo ;
