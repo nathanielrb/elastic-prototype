@@ -31,28 +31,28 @@
              "number_vp" : "http://data.vlaanderen.be/ns/besluitvorming#stuknummerVP",
              "number_vr" : "http://data.vlaanderen.be/ns/besluitvorming#stuknummerVR",
              "data" : {
-                 "field_type" : "attachment",
-                 "via" : "http://mu.semte.ch/vocabularies/core/filename" 
+                 "via" : "http://mu.semte.ch/vocabularies/core/filename",
+                 "attachment_pipeline" : "attachment"
              },
              
-             // "remark" : {
-             //     "via" : "abc",
-             //     "rdf_type" : "schema:Comment",
-             //     "properties" : {
-             //         "created" : "http://data.vlaanderen.be/ns/besluitvorming#aanmaakdatum",
-             //         "text" : "https://www.w3.org/2000/01/rdf-schema#comment",
+             "remark" : {
+                 "via" : "http://data.vlaanderen.be/ns/besluitvorming#opmerking",
+                 "rdf_type" : "http://schema.org/Comment",
+                 "properties" : {
+                     "created" : "http://data.vlaanderen.be/ns/besluitvorming#aanmaakdatum",
+                     "text" : "https://www.w3.org/2000/01/rdf-schema#comment",
                      
-             //         // has-one
-             //         "person" : "http://purl.org/dc/terms/creator",
-             //         "agendaitem" : "http://data.vlaanderen.be/ns/besluitvorming#opmerking"
-             //     }
-             // },
+                     // has-one
+                     "person" : "http://purl.org/dc/terms/creator",
+                     "agendaitem" : "http://data.vlaanderen.be/ns/besluitvorming#opmerking"
+                 }
+             },
 
              // has-many
-             "remark" : [
-                 "http://data.vlaanderen.be/ns/besluitvorming#opmerking", 
-                 "http://mu.semte.ch/vocabularies/core/uuid"
-             ],
+             // "remark" : [
+             //     "http://data.vlaanderen.be/ns/besluitvorming#opmerking", 
+             //     "http://mu.semte.ch/vocabularies/core/uuid"
+             // ],
              "document_version" : [
                  "http://mu.semte.ch/vocabularies/ext/documentVersie",
                  // "http://data.vlaanderen.be/ns/besluitvorming#heeftVersie",
